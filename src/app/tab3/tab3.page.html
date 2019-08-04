@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title id="ion-text-center" class="philosopher">Profil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid no-margin no-padding>
+    <ion-row margin-top>
+      <ion-col size-md="4" offset-md="4" size="6" offset="3">
+        <ion-card button="true">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Color_icon_blue.svg/256px-Color_icon_blue.svg.png">
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size-md="6" offset-md="3" no-padding>
+  <ion-item button="true" color="primary">
+    <ion-label class="roboto">
+      <h1>{{ namae }}</h1>
+      <p>{{ ide }} - {{ prodie }} ({{ fakultase }})</p>
+    </ion-label>
+    <ion-icon md="md-arrow-round-forward" slot="end"></ion-icon>
+  </ion-item>
+  <ion-item button="true" (click)="next('/aduan')">
+    <ion-label class="roboto">
+      <h3>Laporkan Aduan</h3>
+      <p>Misal barang hilang atau kasih feedback gitu~</p>
+    </ion-label>
+    <ion-icon md="md-mail" slot="start"></ion-icon>
+  </ion-item>
+  <ion-item button="true" padding-bottom (click)="logoutUser()">
+    <ion-label class="roboto">
+      <h3>Logout</h3>
+    </ion-label>
+    <ion-icon ios="" md="md-exit" slot="start"></ion-icon>
+  </ion-item>
+</ion-col>
+</ion-row>
+</ion-grid>
+
+</ion-content>
