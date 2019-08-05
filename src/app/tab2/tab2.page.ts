@@ -1,9 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { AuthenticationService } from '../services/authentication.service';
 import { Router } from '@angular/router';
-import { IonContent } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
-import { userInfo } from 'os';
 
 @Component({
   selector: 'app-tab2',
@@ -15,7 +13,13 @@ export class Tab2Page {
 
   user = '';
 
-  sliderConf: {};
+  sliderConf: {
+    spaceBetween: -22,
+    centeredSlides: true,
+    slidesPreview: 1.6,
+    loop: true,
+    autoplay: true
+  };
 
   menu = [
     [
@@ -48,22 +52,21 @@ export class Tab2Page {
     private authenticationService: AuthenticationService,
     private router: Router,
     private storage: Storage,
-    ) {}
+    ) {
+      this.storage.get('USER_INFO').then(res => {
+        this.user = res.NIM_KABIM;
+      });
+    }
 
   ionViewWillEnter() {
-    this.user = this.authenticationService.id;
-    this.scrollToTopOnInit();
-    this.sliderConf = {
-      spaceBetween: -22,
-      centeredSlides: true,
-      slidesPreview: 1.6,
-      loop: true,
-      autoplay: true
-    };
+    this.content.scrollToTop(300);
+    this.sliderConf.autoplay = true;
+    this.sliderConf.loop = true;
   }
 
-  scrollToTopOnInit() {
-    this.content.scrollToTop(300);
+  ionViewDidLeave() {
+    this.sliderConf.autoplay = true;
+    this.sliderConf.loop = true;
   }
 
   next(para) {

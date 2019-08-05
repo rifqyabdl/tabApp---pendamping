@@ -11,12 +11,6 @@ export class AuthenticationService {
 
   authState = new BehaviorSubject(false);
 
-  nama = '';
-  id = '';
-  prodi = '';
-  fakultas = '';
-  grup = '';
-
   constructor(
     private router: Router,
     private storage: Storage,
@@ -34,21 +28,11 @@ export class AuthenticationService {
     });
   }
 
-  setUserinfo(para) {
-    // tambahin set nama, ID, grup, dll
-    this.nama = para.NAMA_KABIM;
-    this.id = para.NIM_KABIM;
-    this.prodi = para.PRODI_KABIM;
-    this.fakultas = para.FAKULTAS_KABIM;
-    this.grup = para.ID_GROUP;
-  }
-
   ifLoggedIn() {
     this.storage.get('USER_INFO').then((response) => {
       if (response === null) {
-        return;
+        this.router.navigate(['login']);
       } else {
-        this.setUserinfo(response);
         this.authState.next(true);
       }
     });
@@ -56,7 +40,6 @@ export class AuthenticationService {
 
   login(userinfo) {
     this.storage.set('USER_INFO', userinfo).then(() => {
-      this.setUserinfo(userinfo);
       this.router.navigate(['tabs']);
       this.authState.next(true);
     });

@@ -1,10 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 //
 import { AuthenticationService } from '../services/authentication.service';
 import { HttpClient } from '@angular/common/http';
 import { NgForm } from '@angular/forms';
-import { LoadingController, AlertController, AngularDelegate, Platform } from '@ionic/angular';
-import { Button, $ } from 'protractor';
+import { LoadingController, AlertController, Platform } from '@ionic/angular';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 const goToHttp = 'https://purwabarata2019.uns.ac.id/panerusApp/';
@@ -18,15 +17,8 @@ let tipe = '';
 })
 export class LoginPage implements OnInit {
 
-  define1 = 1;
-  define2 = 0;
-  define3 = 0;
-  define4 = 0;
   user = '';
   pass = '';
-  cpass = '';
-  name = '';
-  word = '';
   data: any = {};
 
   constructor(

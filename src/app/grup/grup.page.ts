@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { LoadingController, AlertController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
-import { AuthenticationService } from '../services/authentication.service';
+import { Storage } from '@ionic/storage';
 
 const goToHttp = 'https://purwabarata2019.uns.ac.id/panerusApp/';
 let tipe = '';
@@ -19,8 +19,8 @@ export class GrupPage {
   constructor(
     public loadingController: LoadingController,
     private http: HttpClient,
-    private authService: AuthenticationService,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private storage: Storage
     ) {
   }
 
@@ -57,7 +57,9 @@ export class GrupPage {
   // tslint:disable-next-line: use-life-cycle-interface
   ngOnInit() {
     tipe = 'getGroup.php';
-    grup = this.authService.grup;
+    this.storage.get('USER_INFO').then(res => {
+      grup = res.ID_GROUP;
+    });
     this.getData();
   }
 
