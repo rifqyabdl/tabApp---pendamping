@@ -13,6 +13,8 @@ import { Storage } from '@ionic/storage';
 })
 export class Tab3Page {
 
+  define1 = 1;
+  define2 = 0;
   namae = '';
   ide = '';
   prodie = '';
@@ -23,6 +25,7 @@ export class Tab3Page {
     private authService: AuthenticationService,
     private router: Router,
     private loadingController: LoadingController
+    
     ) {
       this.storage.get('USER_INFO').then(res => {
         this.namae = res.NAMA_KABIM;
@@ -30,6 +33,16 @@ export class Tab3Page {
         this.prodie = res.PRODI_KABIM;
         this.fakultase = res.FAKULTAS_KABIM;
       });
+    }
+
+    ngOnInit() {}
+
+    
+    ionViewDidLeave() {
+      
+      this.define1 = 1;
+      this.define2 = 0;
+      
     }
 
   async getData(fun) {
@@ -52,4 +65,14 @@ export class Tab3Page {
     this.router.navigate([para]);
   }
 
+  Profil() {
+    this.define1 = 0;
+    this.define2 = 1;
+    
+  }
+
+  tab3(){
+    this.define1 = 1;
+    this.define2 = 0;
+  }
 }
