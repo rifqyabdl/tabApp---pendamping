@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-import { EmailComposer } from '@ionic-native/email-composer/ngx';
 import { AuthenticationService } from '../services/authentication.service';
 import { Router } from '@angular/router';
 import { LoadingController } from '@ionic/angular';
