@@ -7,6 +7,19 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  constructor(
+    
+    ) {}
+
+    doRefresh(event) {
+      console.log('Begin async operation');
+  
+      setTimeout(() => {
+        console.log('Async operation has ended');
+        event.target.complete();
+      }, 2000);
+    }
+  refresher = document.getElementById('refresher');
+  agenda = ['Mie','Nasi','Es'];
 
 }
