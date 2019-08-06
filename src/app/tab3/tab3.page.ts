@@ -24,7 +24,6 @@ export class Tab3Page {
     private authService: AuthenticationService,
     private router: Router,
     private loadingController: LoadingController
-    
     ) {
       this.storage.get('USER_INFO').then(res => {
         this.namae = res.NAMA_KABIM;
@@ -34,14 +33,9 @@ export class Tab3Page {
       });
     }
 
-    ngOnInit() {}
-
-    
     ionViewDidLeave() {
-      
       this.define1 = 1;
       this.define2 = 0;
-      
     }
 
   async getData(fun) {
@@ -67,10 +61,10 @@ export class Tab3Page {
   Profil() {
     this.define1 = 0;
     this.define2 = 1;
-    
+
   }
 
-  tab3(){
+  tab3() {
     this.define1 = 1;
     this.define2 = 0;
   }

@@ -20,13 +20,12 @@
           <ngx-qrcode [qrc-value]="createdCode"></ngx-qrcode>
         </ion-card>
 
-        <div text-end>
-          <ion-button>Lihat record presensi</ion-button>
-        </div>
+        <ion-button>Lihat record presensi</ion-button>
 
-        <p>Agenda salah? coba update agenda anda</p>
-        <ion-button expand="full" (click)="updateAgenda()"><ion-icon name="barcode"></ion-icon>&nbsp;Update Agenda</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button (click)="updateAgenda()"><ion-icon name="refresh"></ion-icon></ion-fab-button>
+  </ion-fab>
 </ion-content>

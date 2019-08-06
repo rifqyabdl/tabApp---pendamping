@@ -13,7 +13,7 @@ export class Tab2Page {
 
   user = '';
 
-  sliderConf: {
+  sliderConf = {
     spaceBetween: -22,
     centeredSlides: true,
     slidesPreview: 1.6,

@@ -1,111 +1,108 @@
 <ion-header>
-    <ion-toolbar>
-        <ion-buttons slot="start">
-            <ion-back-button defaultHref="/"></ion-back-button>
-          </ion-buttons>
-      <ion-title  class="philosopher">Agenda</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content> 
-    <ion-card>
-      
-          <img src="assets/img/person.png"> 
-      
-    </ion-card>
-    <ion-card>
-      <ion-card-content class="ion-text-center">
-  
-          <p class="roboto">Welcome to Solo
-            <br>
-              2 Agustus 2019
-          </p>
-          <ion-list>
-            <ion-item *ngFor="let entry of line">
-              <ion-label >{{entry.val}}</ion-label>
-              <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
-            </ion-item>
-          </ion-list>
-  
-          <p class="roboto">Agenda di Fakultas
-              <br>
-                2 - 5 Agustus 2019
-            </p>
-            <ion-list>
-              <ion-item *ngFor="let entry of line1">
-                <ion-label>{{entry.val}}</ion-label>
-                <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
-              </ion-item>
-            </ion-list>
-  
-            <p class="roboto">Agenda di Universitas
-                <br>
-                  6 - 7 Agustus 2019
-              </p>
-              <ion-list>
-                <ion-item *ngFor="let entry of line2">
-                  <ion-label>{{entry.val}}</ion-label>
-                  <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
-                </ion-item>
-              </ion-list>
-  
-          <p class="roboto">Agenda di Universitas
-            <br>
-              13 Agustus 2019
-          </p>
-          <ion-list>
-            <ion-item *ngFor="let entry of form">
-              <ion-label>{{entry.val}}</ion-label>
-              <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
-            </ion-item>
-          </ion-list>
-  
-          <p class="roboto">Agenda di Univesitas
-              <br>
-              14 Agustus 2019
-          </p>
-          <ion-list>
-            <ion-item *ngFor="let entry of forms">
-              <ion-label>{{entry.val}}</ion-label>
-              <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
-            </ion-item>
-          </ion-list>
-  
-          <p class="roboto">Agenda di Fakultas
-              <br>
-              15 - 16 Agustus 2019
-          </p>
-          <ion-list>
-            <ion-item *ngFor="let entry of form1">
-              <ion-label>{{entry.val}}</ion-label>
-              <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
-            </ion-item>
-          </ion-list>
-  
-          <p class="roboto">Agenda di Universitas
-                <br>
-                17 Agustus 2019
-          </p>
-          <ion-list>
-            <ion-item *ngFor="let entry of form2">
-              <ion-label>{{entry.val}}</ion-label>
-              <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
-            </ion-item>
-          </ion-list>
-  
-          <p class="roboto">Agenda di Universitas
-                  <br>
-                  18 Agustus 2019
-          </p>
-          <ion-list>
-            <ion-item *ngFor="let entry of form3">
-              <ion-label>{{entry.val}}</ion-label>
-              <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
-            </ion-item>
-          </ion-list>
-      </ion-card-content>
-  
-      
-    </ion-card>
-  </ion-content>
-  
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="philosopher">Agenda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img src="assets/img/person.png">
+  </ion-card>
+  <ion-card>
+    <ion-card-content class="ion-text-center">
+
+      <p class="roboto">Welcome to Solo
+        <br>
+        2 Agustus 2019
+      </p>
+      <ion-list>
+        <ion-item *ngFor="let entry of line">
+          <ion-label>{{entry.val}}</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+
+      <p class="roboto">Agenda di Fakultas
+        <br>
+        2 - 5 Agustus 2019
+      </p>
+      <ion-list>
+        <ion-item *ngFor="let entry of line1">
+          <ion-label>{{entry.val}}</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+
+      <p class="roboto">Agenda di Universitas
+        <br>
+        6 - 7 Agustus 2019
+      </p>
+      <ion-list>
+        <ion-item *ngFor="let entry of line2">
+          <ion-label>{{entry.val}}</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+
+      <p class="roboto">Agenda di Universitas
+        <br>
+        13 Agustus 2019
+      </p>
+      <ion-list>
+        <ion-item *ngFor="let entry of form">
+          <ion-label>{{entry.val}}</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+
+      <p class="roboto">Agenda di Univesitas
+        <br>
+        14 Agustus 2019
+      </p>
+      <ion-list>
+        <ion-item *ngFor="let entry of forms">
+          <ion-label>{{entry.val}}</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+
+      <p class="roboto">Agenda di Fakultas
+        <br>
+        15 - 16 Agustus 2019
+      </p>
+      <ion-list>
+        <ion-item *ngFor="let entry of form1">
+          <ion-label>{{entry.val}}</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+
+      <p class="roboto">Agenda di Universitas
+        <br>
+        17 Agustus 2019
+      </p>
+      <ion-list>
+        <ion-item *ngFor="let entry of form2">
+          <ion-label>{{entry.val}}</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+
+      <p class="roboto">Agenda di Universitas
+        <br>
+        18 Agustus 2019
+      </p>
+      <ion-list>
+        <ion-item *ngFor="let entry of form3">
+          <ion-label>{{entry.val}}</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+
+
+  </ion-card>
+</ion-content>

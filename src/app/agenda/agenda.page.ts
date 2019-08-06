@@ -7,24 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgendaPage implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
   public line = [
     { val: 'Udah sampai di Solo?', isChecked: true },
-   
   ];
 
   public line1 = [
     { val: 'Sambara!', isChecked: true },
-   
   ];
 
   public line2 = [
     { val: 'Sambara lagi!', isChecked: true },
-   
   ];
 
   public form = [
@@ -49,5 +41,9 @@ export class AgendaPage implements OnInit {
   public form3 = [
     { val: 'Student Vaganza', isChecked: false },
   ];
+
+  constructor() { }
+
+  ngOnInit() { }
 
 }

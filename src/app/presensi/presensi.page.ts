@@ -28,8 +28,9 @@ export class PresensiPage implements OnInit {
         this.authService.setAgenda(this.data);
         this.storage.get('USER_INFO').then((res) => {
           this.agend = this.data.NAMA_AGENDA;
-          this.createdCode = res.ID_GROUP + '|' + res.ID_KABIM + '|' + this.data.ID_AGENDA;
-          this.createCode(this.createdCode);
+          let papa = res.ID_GROUP + '|' + res.ID_KABIM + '|' + this.data.ID_AGENDA;
+          papa = btoa(btoa(papa));
+          this.createCode(papa);
         });
       } else {
         this.agend = this.data.error.text;
@@ -44,13 +45,20 @@ export class PresensiPage implements OnInit {
       if (response) {
         this.agend = response.NAMA_AGENDA;
         this.storage.get('USER_INFO').then((res) => {
-          this.createdCode = res.ID_GROUP + '|' + res.ID_KABIM + '|' + response.ID_AGENDA;
-          this.createCode(this.createdCode);
+          let papa = res.ID_GROUP + '|' + res.ID_KABIM + '|' + response.ID_AGENDA;
+          papa = btoa(btoa(papa));
+          this.createCode(papa);
         });
       } else {
         this.updateAgenda();
       }
     });
+  }
+
+  // tslint:disable-next-line: use-life-cycle-interface
+  ngOnDestroy() {
+    this.agend = '';
+    this.createdCode = null;
   }
 
 }
