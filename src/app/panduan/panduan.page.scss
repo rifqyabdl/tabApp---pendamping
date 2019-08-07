@@ -1,44 +1,17 @@
-
   ion-slide {
-    height: calc(100vh - 140px);
+    height: calc(92vh); //83vh default
     overflow-y: scroll;
   }
 
-  .fixed[scrollx=true], div[scrolly=true] {
-    position: relative;
-    overflow: hidden;
   
-    ::-webkit-scrollbar {
-      display: none;
-    }
-  }
-  
-  .fixed[scrollx=true] {
-    overflow-x: auto;
-  }
-  
-  .fixed[scrolly=true] {
-    overflow-y: auto;
-  }
+p{
+  font-size : 3.6vw;
+}
 
   
 
   
 
-  .square {
-    width: 31%;
-  }
-  .square:after {
-    content: "";
-    display: block;
-    padding-bottom: 0%;
-  }
-
-  ion-col > div {
-    background-color: #f7f7f7;
-    border: solid 1px #ddd;
-    padding: 10px;
-  }
   
   ion-title {
     color: black;

@@ -3,4 +3,5 @@ export interface PDM{
     icon: string;
     page: number;
     content: string[];
+    color: string;
 }
