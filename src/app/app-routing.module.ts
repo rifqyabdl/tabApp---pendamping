@@ -13,7 +13,6 @@ const routes: Routes = [
   { path: 'tabs/agenda', loadChildren: './agenda/agenda.module#AgendaPageModule'},
   { path: 'tabs/lokasi', loadChildren: './lokasi/lokasi.module#LokasiPageModule'},
   { path: 'tabs/presensi', loadChildren: './presensi/presensi.module#PresensiPageModule'},
-  { path: 'tabs/detail', loadChildren: './panduan/detail/detail.module#DetailPageModule'},
   { path: 'tabs/tab3/aduan', loadChildren: './aduan/aduan.module#AduanPageModule' },
 ];
 
