@@ -15,7 +15,7 @@
 
   <ion-grid no-padding>
     <ion-row>
-      <ion-col size-md="6" offset-md="3">
+      <ion-col size-lg="6" offset-lg="3">
         <ion-card>
           <ion-card-header no-padding padding-horizontal>
             <ion-item lines="none" color=none>
@@ -40,14 +40,14 @@
                     <ion-label>
                       <ion-icon name="{{ it.name }}" slot="start" src="{{ it.custom }}"></ion-icon>
                       <div>{{ it.title }}</div>
-                    </ion-label>&nbsp;&nbsp;{{ it.title2 }}
+                    </ion-label>&nbsp;&nbsp;<div id="tit2">{{ it.title2 }}</div>
                   </ion-button>
 
                   <ion-button class="butt" *ngIf="it.type === 'lnk'" href="{{it.route}}">
                     <ion-label>
                       <ion-icon name="{{ it.name }}" slot="start"></ion-icon>
                       <div>{{ it.title }}</div>
-                    </ion-label>&nbsp;{{ it.title2 }}
+                    </ion-label>&nbsp;&nbsp;<div id="tit2">{{ it.title2 }}</div>
                   </ion-button>
 
                 </ion-col>
@@ -59,26 +59,18 @@
     </ion-row>
 
     <ion-row>
-      <ion-col size-md="6" offset-md="3" no-margin no-padding padding-top padding-start padding-end>
+      <ion-col size-lg="6" offset-lg="3" no-margin no-padding padding-top padding-start padding-end>
         <ion-list>
           <ion-list-header>
             <ion-title id="ion-text-center" class="philosopher">Daftar Agenda</ion-title>
           </ion-list-header>
-          <ion-item-group>
+          <ion-item-group *ngFor="let item of newAgenda">
             <ion-item-divider color="light">
-              <ion-label>Agenda Saat ini</ion-label>
+              <ion-label *ngIf="item.STATUS === '1'">Agenda Saat Ini</ion-label>
+              <ion-label *ngIf="item.STATUS === '0'">Agenda yang Akan Datang</ion-label>
             </ion-item-divider>
             <ion-item lines="none">
-              <ion-label>Pramuka</ion-label>
-            </ion-item>
-            <ion-item-divider color="light">
-              <ion-label>Agenda Terdekat Nanti</ion-label>
-            </ion-item-divider>
-            <ion-item>
-              <ion-label>Mandi</ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-label>Mandi lagi</ion-label>
+              <ion-label>{{item.JUDUL_AGENDA}}</ion-label>
             </ion-item>
           </ion-item-group>
         </ion-list>

@@ -14,6 +14,8 @@ const routes: Routes = [
   { path: 'tabs/lokasi', loadChildren: './lokasi/lokasi.module#LokasiPageModule'},
   { path: 'tabs/presensi', loadChildren: './presensi/presensi.module#PresensiPageModule'},
   { path: 'tabs/tab3/aduan', loadChildren: './aduan/aduan.module#AduanPageModule' },
+  { path: 'tabs/presensi/note', loadChildren: './presensi/note/note.module#NotePageModule' },
+
 ];
 
 @NgModule({

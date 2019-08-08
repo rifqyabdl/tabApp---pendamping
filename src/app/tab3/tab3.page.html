@@ -1,94 +1,101 @@
 <ion-content>
   <ion-grid no-margin no-padding>
-
+    
       <ion-header>
-          <ion-toolbar *ngIf="define1">
-            <ion-title id="ion-text-center" class="philosopher">Profil</ion-title>
+        <ion-toolbar *ngIf="define1">
+          <ion-title id="ion-text-center" class="philosopher">Profil</ion-title>
+        </ion-toolbar>
+        <ion-toolbar *ngIf="define2">
+            <ion-icon (click)="ionViewDidLeave()" name="arrow-back" slot="start" padding-start size="default">
+            </ion-icon>
+            <ion-title class="philosopher">Profil Lengkap</ion-title>
           </ion-toolbar>
-          <ion-toolbar *ngIf="define2">
-              <ion-icon (click)="ionViewDidLeave()" name="arrow-back" slot="start" padding-start size="default">
-              </ion-icon>
-              <ion-title class="philosopher">Profil Lengkap</ion-title>
-            </ion-toolbar>
-        </ion-header>
-        
-    <ion-row margin-top>
-      <ion-col size-md="4" offset-md="4" size="6" offset="3">
-        <ion-card button="true">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Color_icon_blue.svg/256px-Color_icon_blue.svg.png">
+      </ion-header>
+  
+      <ion-row margin-top>
+        <ion-col size-md="4" offset-md="4" size="6" offset="3">
+            <img src="assets/img/maba-l.png">
+        </ion-col>
+      </ion-row>
+     
+     
+
+      <div *ngIf="define1">
+      <ion-row>
+      
+        <ion-col size-md="6" offset-md="3" no-padding>
+        <ion-card>
+          <ion-item button="true" (click)="getData(Profil())" color="primary">
+            <ion-label class="roboto">
+              <h1>{{ namae }}</h1>
+              <p>{{ ide }} - {{ prodie }} ({{ fakultase }})</p>
+            </ion-label>
+            <ion-icon md="md-arrow-round-forward" slot="end"></ion-icon>
+          </ion-item>
         </ion-card>
+
+        <ion-card color="light" padding-bottom>
+          <ion-item button="true" (click)="next('tabs/tab3/aduan')" lines="none">
+            <ion-label class="roboto">
+              <h3><b>Laporkan Aduan</b></h3>
+            </ion-label>
+            <ion-icon md="md-mail" slot="start"></ion-icon>
+          </ion-item>
+          <ion-item button="true" (click)="logoutUser()" lines="none" padding-bottom>
+            <ion-label class="roboto">
+              <h3><b>Logout</b></h3>              
+            </ion-label>
+            <ion-icon ios="" md="md-exit" slot="start"></ion-icon>
+          </ion-item>
+        </ion-card>
+        </ion-col>
+      </ion-row>
+
+    </div>
+    <div *ngIf="define2">
+      <ion-row>
+        <ion-col size-md="6" offset-md="3" no-padding>
+      <ion-card >
+        <ion-list>
+
+          <ion-item>
+              <ion-icon name="at" slot="start"></ion-icon>
+            <ion-label>
+             <h4 class="philosopher"><i>NIM</i></h4>
+             <h2>{{ide}}</h2>      
+            </ion-label>
+          </ion-item>
+
+          <ion-item>
+              <ion-icon name="person" slot="start"></ion-icon>
+            <ion-label>
+             <h4 class="philosopher"><i>Nama Lengkap</i></h4>
+             <h2>{{namae}}</h2>      
+            </ion-label>
+          </ion-item>
+
+          <ion-item>
+              <ion-icon name="book" slot="start"></ion-icon>
+            <ion-label>
+             <h4 class="philosopher"><i>Program Studi</i></h4>
+             <h2>{{prodie}}</h2>      
+            </ion-label>
+          </ion-item>
+
+          <ion-item>
+              <ion-icon name="list-box" slot="start"></ion-icon>
+            <ion-label>
+             <h4 class="philosopher"><i>Fakultas</i></h4>
+             <h2>{{fakultase}}</h2>      
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card>
       </ion-col>
     </ion-row>
+    </div>
+  </ion-grid>
 
-    <div *ngIf="define1">
-    <ion-row>
-      <ion-col size-md="6" offset-md="3" no-padding>
-  <ion-item button="true" color="primary" (click)="getData(Profil())">
-    <ion-label class="roboto">
-      <h1>{{ namae }}</h1>
-      <p>{{ ide }} - {{ prodie }} ({{ fakultase }})</p>
-    </ion-label>
-    <ion-icon md="md-arrow-round-forward" slot="end"></ion-icon>
-  </ion-item>
-  <ion-item button="true" (click)="next('tabs/tab3/aduan')">
-    <ion-label class="roboto">
-      <h3>Laporkan Aduan</h3>
-      <p>Misal barang hilang atau kasih feedback gitu~</p>
-    </ion-label>
-    <ion-icon md="md-mail" slot="start"></ion-icon>
-  </ion-item>
-  <ion-item button="true" padding-bottom (click)="logoutUser()">
-    <ion-label class="roboto">
-      <h3>Logout</h3>
-    </ion-label>
-    <ion-icon ios="" md="md-exit" slot="start"></ion-icon>
-  </ion-item>
-</ion-col>
-</ion-row>
-</div>
 
-<div *ngIf="define2">
-    <ion-row>
-      <ion-col size-md="6" offset-md="3" no-padding>
-    <ion-card >
-      <ion-list>
-        <ion-item>
-            <ion-icon name="at" slot="start"></ion-icon>
-          <ion-label>
-           <h4 class="philosopher"><i>NIM</i></h4>
-           <h2>{{ide}}</h2>      
-          </ion-label>
-        </ion-item>
-
-        <ion-item>
-            <ion-icon name="person" slot="start"></ion-icon>
-          <ion-label>
-           <h4 class="philosopher"><i>Nama Lengkap</i></h4>
-           <h2>{{namae}}</h2>      
-          </ion-label>
-        </ion-item>
-
-        <ion-item>
-            <ion-icon name="book" slot="start"></ion-icon>
-          <ion-label>
-           <h4 class="philosopher"><i>Program Studi</i></h4>
-           <h2>{{prodie}}</h2>      
-          </ion-label>
-        </ion-item>
-
-        <ion-item>
-            <ion-icon name="list-box" slot="start"></ion-icon>
-          <ion-label>
-           <h4 class="philosopher"><i>Fakultas</i></h4>
-           <h2>{{fakultase}}</h2>      
-          </ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-card>
-    </ion-col>
-  </ion-row>
-  </div>
-</ion-grid>
 
 </ion-content>

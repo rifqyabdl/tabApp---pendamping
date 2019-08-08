@@ -12,6 +12,7 @@ export class Tab2Page {
   @ViewChild('content') private content: any;
 
   user = '';
+  newAgenda: any;
 
   sliderConf = {
     spaceBetween: -22,
@@ -56,6 +57,9 @@ export class Tab2Page {
       this.storage.get('USER_INFO').then(res => {
         this.user = res.NIM_KABIM;
       });
+      this.storage.get('USER_NEWAGENDA').then(res => {
+        this.newAgenda = res;
+      }, err => { });
     }
 
   ionViewWillEnter() {
