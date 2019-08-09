@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { HttpClient } from '@angular/common/http';
+import { AlertController } from '@ionic/angular';
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 const goToHttp = 'https://purwabarata2019.uns.ac.id/panerusApp/';
 
@@ -12,10 +14,14 @@ const goToHttp = 'https://purwabarata2019.uns.ac.id/panerusApp/';
 export class Tab1Page {
 
   refresher = document.getElementById('refresher');
-  list = document.getElementById('list');
   kabar: any;
 
-  constructor(private storage: Storage, private http: HttpClient) {
+  constructor(
+    private storage: Storage,
+    private http: HttpClient,
+    private alertController: AlertController,
+    private iab: InAppBrowser
+    ) {
     this.storage.get('USER_KABAR').then(res => {
       this.kabar = res;
     }, err => {
@@ -29,6 +35,7 @@ export class Tab1Page {
       this.storage.get('USER_KABAR').then(res => {
         this.kabar = res;
         event.target.complete();
+        return;
       }, err => {
         return;
       });
@@ -49,6 +56,36 @@ export class Tab1Page {
     }, err => {
       return;
     });
+  }
+
+  async showNote(desk, lnk) {
+    let choose: any;
+    if (lnk === '#') {
+      choose = await this.alertController.create({
+        message: desk,
+        buttons: [
+          {
+            text: 'OK',
+            handler: data => { this.alertController.dismiss(); }
+          },
+        ]
+      });
+    } else {
+      choose = await this.alertController.create({
+        message: desk,
+        buttons: [
+          {
+            text: 'Kunjungi',
+            handler: data => { this.openWebSys(lnk); }
+          }
+        ]
+      });
+    }
+    await choose.present();
+  }
+
+  openWebSys(goto) {
+    this.iab.create(goto, '_system');
   }
 
 }

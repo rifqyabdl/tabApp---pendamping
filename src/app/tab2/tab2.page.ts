@@ -2,6 +2,10 @@ import { Component, ViewChild } from '@angular/core';
 import { AuthenticationService } from '../services/authentication.service';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage';
+import { HttpClient } from '@angular/common/http';
+
+const goToHttp = 'https://purwabarata2019.uns.ac.id/panerusApp/';
+let tipe = '';
 
 @Component({
   selector: 'app-tab2',
@@ -12,7 +16,9 @@ export class Tab2Page {
   @ViewChild('content') private content: any;
 
   user = '';
+  img: any;
   newAgenda: any;
+  ads: any;
 
   sliderConf = {
     spaceBetween: -22,
@@ -24,7 +30,7 @@ export class Tab2Page {
 
   menu = [
     [
-      { name: '', title2: 'Tentang PKKMB', route: 'tabs/tentang', type: 'btn', custom: 'assets/icon/custom/pkkmb-1.svg'}
+      { title2: 'Tentang PKKMB', route: 'tabs/tentang', type: 'btn', custom: 'assets/icon/custom/pkkmb-1.svg'}
     ],
     [
       { name: 'book', title: 'Panduan', route: 'tabs/panduan', type: 'btn' },
@@ -40,22 +46,62 @@ export class Tab2Page {
     ]
   ];
 
-  ads = [
-    // tslint:disable-next-line: max-line-length
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Hyundai_i40_with_Dalkin_Advertising_operating_under_Comfort_taxis.jpg/512px-Hyundai_i40_with_Dalkin_Advertising_operating_under_Comfort_taxis.jpg',
-    // tslint:disable-next-line: max-line-length
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Hyundai_i40_with_Dalkin_Advertising_operating_under_Comfort_taxis.jpg/512px-Hyundai_i40_with_Dalkin_Advertising_operating_under_Comfort_taxis.jpg',
-    // tslint:disable-next-line: max-line-length
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Hyundai_i40_with_Dalkin_Advertising_operating_under_Comfort_taxis.jpg/512px-Hyundai_i40_with_Dalkin_Advertising_operating_under_Comfort_taxis.jpg'
-  ];
+  getKabar() {
+    const postData = JSON.stringify({kabar: 'all'});
+    tipe = 'kabar.php';
+
+    this.http.post(goToHttp + tipe, postData).subscribe(data => {
+      if (data) {
+        const kabar = data;
+        this.storage.set('USER_KABAR', kabar);
+      } else {
+        return;
+      }
+    }, err => {
+      return;
+    });
+  }
+
+  getNewestAgenda() {
+    const postDataa = JSON.stringify({agenda0: '0', agenda1: '1'});
+    tipe = 'newestAgenda.php';
+
+    this.http.post(goToHttp + tipe, postDataa).subscribe(dataa => {
+      if (dataa) {
+        const agenda = dataa;
+        this.storage.set('USER_NEWAGENDA', agenda);
+      } else {
+        return;
+      }
+    }, err => {
+      return;
+    });
+  }
+
+  getAds() {
+    const postDataa = JSON.stringify({ads: 'all'});
+    tipe = 'iklan.php';
+
+    this.http.post(goToHttp + tipe, postDataa).subscribe(resp => {
+      if (resp) {
+        this.ads = resp;
+      } else {
+        return;
+      }
+    }, err => {
+      return;
+    });
+  }
 
   constructor(
     private authenticationService: AuthenticationService,
     private router: Router,
     private storage: Storage,
+    private http: HttpClient
     ) {
       this.storage.get('USER_INFO').then(res => {
         this.user = res.NIM_KABIM;
+        this.img = res.FOTO;
       });
       this.storage.get('USER_NEWAGENDA').then(res => {
         this.newAgenda = res;
@@ -66,6 +112,10 @@ export class Tab2Page {
     this.content.scrollToTop(300);
     this.sliderConf.autoplay = true;
     this.sliderConf.loop = true;
+  }
+
+  ionViewDidEnter() {
+    this.getKabar();
   }
 
   ionViewDidLeave() {

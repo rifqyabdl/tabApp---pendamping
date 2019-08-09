@@ -25,20 +25,20 @@ export class Tab3Page {
     private authService: AuthenticationService,
     private router: Router,
     private loadingController: LoadingController
-    ) {
-      this.storage.get('USER_INFO').then(res => {
-        this.namae = res.NAMA_KABIM;
-        this.ide = res.NIM_KABIM;
-        this.prodie = res.PRODI_KABIM;
-        this.fakultase = res.FAKULTAS_KABIM;
-        this.img = res.FOTO;
-      });
-    }
+  ) {
+    this.storage.get('USER_INFO').then(res => {
+      this.namae = res.NAMA_KABIM;
+      this.ide = res.NIM_KABIM;
+      this.prodie = res.PRODI_KABIM;
+      this.fakultase = res.FAKULTAS_KABIM;
+      this.img = res.FOTO;
+    });
+  }
 
-    ionViewDidLeave() {
-      this.define1 = 1;
-      this.define2 = 0;
-    }
+  ionViewDidLeave() {
+    this.define1 = 1;
+    this.define2 = 0;
+  }
 
   async getData(fun) {
     const loading = await this.loadingController.create({
