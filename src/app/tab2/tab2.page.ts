@@ -99,6 +99,8 @@ export class Tab2Page {
     private storage: Storage,
     private http: HttpClient
     ) {
+      this.getAds();
+      this.getNewestAgenda();
       this.storage.get('USER_INFO').then(res => {
         this.user = res.NIM_KABIM;
         this.img = res.FOTO;
