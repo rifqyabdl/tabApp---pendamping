@@ -18,6 +18,7 @@ export class Tab3Page {
   ide = '';
   prodie = '';
   fakultase = '';
+  img: any;
 
   constructor(
     private storage: Storage,
@@ -30,6 +31,7 @@ export class Tab3Page {
         this.ide = res.NIM_KABIM;
         this.prodie = res.PRODI_KABIM;
         this.fakultase = res.FAKULTAS_KABIM;
+        this.img = res.FOTO;
       });
     }
 
