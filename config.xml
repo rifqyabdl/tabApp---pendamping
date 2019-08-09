@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.panerus.kabim.purwabrata" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Panerus Kabim</name>
-    <description>Aplikasi resmi PKKMB UNS.</description>
+    <description>Aplikasi resmi PKKMB UNS untuk Kakak Pembimbing</description>
     <author email="purwabrata@gmail.com" href="http://pkkmb.uns.ac.id/">Tim Belantosuro</author>
     <content src="index.html" />
     <access origin="*" />
@@ -15,7 +15,7 @@
     <preference name="android-minSdkVersion" value="19" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashMaintainAspectRatio" value="true" />
-    <preference name="FadeSplashScreenDuration" value="4500">
+    <preference name="FadeSplashScreenDuration" value="5000" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="SplashScreen" value="screen" />
     <preference name="SplashScreenDelay" value="3000" />
