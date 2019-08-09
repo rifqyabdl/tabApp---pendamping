@@ -20,6 +20,7 @@ import { AuthenticationService } from './services/authentication.service';
 import { IonicStorageModule } from '@ionic/storage';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { HeaderColor } from '@ionic-native/header-color/ngx';
+import { Device } from '@ionic-native/device/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -41,6 +42,7 @@ import { HeaderColor } from '@ionic-native/header-color/ngx';
     IonicStorageModule,
     InAppBrowser,
     HeaderColor,
+	Device,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
