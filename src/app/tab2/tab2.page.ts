@@ -36,7 +36,7 @@ export class Tab2Page {
     [
       { name: 'people', title: 'Grup', route: 'tabs/grup', type: 'btn' },
       { name: 'bookmarks', title: 'Agenda', route: 'tabs/agenda', type: 'btn' },
-      { name: 'pin', title: 'Lokasi', route: 'https://maps.google.com/', type: 'lnk' }
+      { name: 'pin', title: 'Lokasi', route: 'https://www.google.com/maps/place/Universitas+Sebelas+Maret,+Jl.+Ir+Sutami+No.36+A,+Pucangsawit,+Kec.+Jebres,+Kota+Surakarta,+Jawa+Tengah+57126/@-7.5596031,110.8565448,17z/data=!4m2!3m1!1s0x2e7a14234667a3fd:0xbda63b32997616ad', type: 'lnk' }
     ]
   ];
 
