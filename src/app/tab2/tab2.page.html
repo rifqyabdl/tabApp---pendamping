@@ -8,7 +8,7 @@
   <ion-slides [options]="sliderConf" pager="true">
     <ion-slide *ngFor="let mage of ads">
       <ion-card>
-        <img src="{{ mage }}">
+        <img src="{{ mage.LINK }}">
       </ion-card>
     </ion-slide>
   </ion-slides>
@@ -21,7 +21,7 @@
             <ion-item lines="none" color=none>
               <ion-thumbnail slot="end" margin-left margin-bottom>
                 <ion-avatar>
-                  <img src="assets/icon/custom/profile.svg">
+                  <img src={{img}}>
                 </ion-avatar>
               </ion-thumbnail>
               <ion-label *ngIf="user">

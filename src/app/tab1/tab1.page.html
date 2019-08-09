@@ -16,9 +16,11 @@
   </ion-refresher>
   
   <ion-list id="list" *ngIf="kabar">
-    <ion-item class="roboto" *ngFor="let item of kabar">
-      <ion-icon name="{{item.ION_ICON}}" color="medium" slot="start" id="refresher"></ion-icon>
-      <ion-label>{{item.ISI}}</ion-label>
-    </ion-item>
+    <div *ngFor="let item of kabar"> 
+      <ion-item class="roboto" button="true" (click)="showNote(item.DESKRIPSI, item.LINK)">
+        <ion-icon name="{{item.ION_ICON}}" color="medium" slot="start" id="refresher"></ion-icon>
+        <ion-label>{{item.ISI}}</ion-label>
+      </ion-item>
+    </div>
   </ion-list>
 </ion-content>
