@@ -15,14 +15,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "com.telerik.plugins.nativepagetransitions": {
-    "source": {
-      "type": "registry",
-      "id": "com.telerik.plugins.nativepagetransitions@^0.6.5"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-statusbar": {
     "source": {
       "type": "registry",
@@ -35,6 +27,14 @@
     "source": {
       "type": "registry",
       "id": "cordova-plugin-browsertab"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-headercolor": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-headercolor"
     },
     "is_top_level": true,
     "variables": {}

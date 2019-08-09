@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Storage } from '@ionic/storage';
+import { HttpClient } from '@angular/common/http';
+
+const goToHttp = 'https://purwabarata2019.uns.ac.id/panerusApp/';
 
 @Component({
   selector: 'app-tab1',
@@ -7,19 +11,44 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor(
-    
-    ) {}
-
-    doRefresh(event) {
-      console.log('Begin async operation');
-  
-      setTimeout(() => {
-        console.log('Async operation has ended');
-        event.target.complete();
-      }, 2000);
-    }
   refresher = document.getElementById('refresher');
-  agenda = ['Mie','Nasi','Es'];
+  list = document.getElementById('list');
+  kabar: any;
+
+  constructor(private storage: Storage, private http: HttpClient) {
+    this.storage.get('USER_KABAR').then(res => {
+      this.kabar = res;
+    }, err => {
+      return;
+    });
+  }
+
+  doRefresh(event) {
+    setTimeout(() => {
+      this.getKabarManual();
+      this.storage.get('USER_KABAR').then(res => {
+        this.kabar = res;
+        event.target.complete();
+      }, err => {
+        return;
+      });
+      event.target.complete();
+    }, 5000);
+  }
+
+  getKabarManual() {
+    const postDataa = JSON.stringify({kabar: 'all'});
+    const tipe = 'kabar.php';
+
+    this.http.post(goToHttp + tipe, postDataa).subscribe(dataa => {
+      if (dataa) {
+        this.storage.set('USER_KABAR', dataa);
+      } else {
+        return;
+      }
+    }, err => {
+      return;
+    });
+  }
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { HttpClient } from '@angular/common/http';
 import { AuthenticationService } from '../services/authentication.service';
+import { Router } from '@angular/router';
 
 const goToHttp = 'https://purwabarata2019.uns.ac.id/panerusApp/';
 const tipe = 'absensi1.php';
@@ -38,7 +39,7 @@ export class PresensiPage implements OnInit {
     });
   }
 
-  constructor(private storage: Storage, private http: HttpClient, private authService: AuthenticationService) { }
+  constructor(private storage: Storage, private router: Router, private http: HttpClient, private authService: AuthenticationService) { }
 
   ngOnInit() {
     this.storage.get('USER_AGENDA').then((response) => {
@@ -59,6 +60,11 @@ export class PresensiPage implements OnInit {
   ngOnDestroy() {
     this.agend = '';
     this.createdCode = null;
+  }
+
+  addNote() {
+    this.authService.isAuthenticated();
+    this.router.navigate(['tabs/presensi/note']);
   }
 
 }

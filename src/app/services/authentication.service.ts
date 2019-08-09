@@ -47,6 +47,9 @@ export class AuthenticationService {
 
   logout() {
     this.storage.remove('USER_INFO').then(() => {
+      this.storage.remove('USER_AGENDA');
+      this.storage.remove('USER_NEWAGENDA');
+      this.storage.remove('USER_KABAR');
       this.storage.clear();
       this.router.navigate(['']);
       this.authState.next(false);

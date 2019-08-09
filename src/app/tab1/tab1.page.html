@@ -1,44 +1,24 @@
 <ion-header>
-    <ion-toolbar>
-      <ion-title id="ion-text-center" class="philosopher">
-        Kabar
-      </ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar>
+    <ion-title id="ion-text-center" class="philosopher">
+      Kabar
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)" ionPull="ionPull($event)" ionStart="ionStart($event)">
+    <ion-refresher-content pullingIcon="arrow-dropdown" pullingText="Pull to refresh" refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+
+    </ion-refresher-content>
+  </ion-refresher>
   
-     
-  <ion-content>
-      <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)" (ionPull)="ionPull($event)" (ionStart)="ionStart($event)">
-          <ion-refresher-content
-            pullingIcon="arrow-dropdown"
-            pullingText="Pull to refresh"
-            refreshingSpinner="circles"
-            refreshingText="Refreshing..."
-          >
-  
-          </ion-refresher-content>
-        </ion-refresher>
-      <ion-list>
-          <ion-item class="roboto" >
-            <ion-icon name="checkmark" color="medium" slot="start" id="refresher"></ion-icon>
-            <ion-label> Update profile berhasil</ion-label>
-          </ion-item>
-      
-          <ion-item class="roboto" >
-            <ion-icon name="warning" color="medium" slot="start" id="refresher"></ion-icon>
-            <ion-label> Jangan lupa membawa peralatan!</ion-label>
-          </ion-item>
-      
-          <ion-item class="roboto" >
-            <ion-icon name="warning" color="medium" slot="start" id="refresher"></ion-icon>
-            <ion-label> Jangan lupa makan!</ion-label>
-          </ion-item>
-      
-          <ion-item class="roboto" >
-            <ion-icon name="mail-unread" color="medium" slot="start" id="refresher" ></ion-icon>
-            <ion-label> Ini pesan untukmu!</ion-label>
-          </ion-item>
-      </ion-list>
-  </ion-content>
-  
-  
+  <ion-list id="list" *ngIf="kabar">
+    <ion-item class="roboto" *ngFor="let item of kabar">
+      <ion-icon name="{{item.ION_ICON}}" color="medium" slot="start" id="refresher"></ion-icon>
+      <ion-label>{{item.ISI}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
