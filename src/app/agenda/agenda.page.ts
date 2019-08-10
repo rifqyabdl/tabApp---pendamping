@@ -40,7 +40,6 @@ export class AgendaPage implements OnInit {
 		 this.form3[0].isChecked = this.proma;
 	 }else if(prom === 11){
 		 this.forms[0].isChecked = this.proma;
-		 console.log('MASSSOK');
 	 }
  }
 	
