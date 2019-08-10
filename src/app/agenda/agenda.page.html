@@ -1,15 +1,17 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
-    <ion-title class="philosopher">Agenda</ion-title>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+    <ion-title  class="philosopher">Agenda</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content> 
   <ion-card>
-    <img src="assets/img/person.png">
+    
+        <img src="assets/img/agenda-2.png"> 
+    
   </ion-card>
   <ion-card>
     <ion-card-content class="ion-text-center">
@@ -21,7 +23,7 @@
         <ion-list>
           <ion-item *ngFor="let entry of line">
             <ion-label >{{entry.val}}</ion-label>
-            <ion-toggle slot="end" [(ngModel)]="entry.isChecked"></ion-toggle>
+            <ion-toggle (ionChange)="checkeda(1)" slot="end" [(ngModel)]="entry.isChecked"></ion-toggle>
           </ion-item>
         </ion-list>
 
@@ -32,7 +34,7 @@
           <ion-list>
             <ion-item *ngFor="let entry of line1">
               <ion-label>{{entry.val}}</ion-label>
-              <ion-toggle slot="end" [(ngModel)]="entry.isChecked"></ion-toggle>
+              <ion-toggle (ionChange)="checkeda(2)" slot="end" [(ngModel)]="entry.isChecked"></ion-toggle>
             </ion-item>
           </ion-list>
 
@@ -43,7 +45,7 @@
             <ion-list>
               <ion-item *ngFor="let entry of line2">
                 <ion-label>{{entry.val}}</ion-label>
-                <ion-toggle slot="end" [(ngModel)]="entry.isChecked"></ion-toggle>
+                <ion-toggle (ionChange)="checkeda(3)" slot="end" [(ngModel)]="entry.isChecked"></ion-toggle>
               </ion-item>
             </ion-list>
 
@@ -52,9 +54,13 @@
             13 Agustus 2019
         </p>
         <ion-list>
-          <ion-item *ngFor="let entry of form">
-            <ion-label>{{entry.val}}</ion-label>
-            <ion-toggle slot="end" [(ngModel)]="entry.isChecked"></ion-toggle>
+          <ion-item>
+            <ion-label>{{form[0].val}}</ion-label>
+            <ion-toggle (ionChange)="checkeda(4)" slot="end" [(ngModel)]="form[0].isChecked"></ion-toggle>
+          </ion-item>
+		  <ion-item>
+            <ion-label>{{form[1].val}}</ion-label>
+            <ion-toggle (ionChange)="checkeda(5)" slot="end" [(ngModel)]="form[1].isChecked"></ion-toggle>
           </ion-item>
         </ion-list>
 
@@ -65,7 +71,7 @@
         <ion-list>
           <ion-item *ngFor="let entry of forms">
             <ion-label>{{entry.val}}</ion-label>
-            <ion-toggle slot="end" [(ngModel)]="entry.isChecked"></ion-toggle>
+            <ion-toggle (ionChange)="checkeda(11)" slot="end" [(ngModel)]="entry.isChecked"></ion-toggle>
           </ion-item>
         </ion-list>
 
@@ -76,7 +82,7 @@
         <ion-list>
           <ion-item *ngFor="let entry of form1">
             <ion-label>{{entry.val}}</ion-label>
-            <ion-toggle slot="end" [(ngModel)]="entry.isChecked"></ion-toggle>
+            <ion-toggle (ionChange)="checkeda(6)" slot="end" [(ngModel)]="entry.isChecked"></ion-toggle>
           </ion-item>
         </ion-list>
 
@@ -85,9 +91,17 @@
               17 Agustus 2019
         </p>
         <ion-list>
-          <ion-item *ngFor="let entry of form2">
-            <ion-label>{{entry.val}}</ion-label>
-            <ion-toggle slot="end" [(ngModel)]="entry.isChecked"></ion-toggle>
+          <ion-item>
+            <ion-label>{{form2[0].val}}</ion-label>
+            <ion-toggle (ionChange)="checkeda(7)" slot="end" [(ngModel)]="form2[0].isChecked"></ion-toggle>
+          </ion-item>
+		  <ion-item>
+            <ion-label>{{form2[1].val}}</ion-label>
+            <ion-toggle (ionChange)="checkeda(8)" slot="end" [(ngModel)]="form2[1].isChecked"></ion-toggle>
+          </ion-item>
+		  <ion-item>
+            <ion-label>{{form2[2].val}}</ion-label>
+            <ion-toggle (ionChange)="checkeda(9)" slot="end" [(ngModel)]="form2[2].isChecked"></ion-toggle>
           </ion-item>
         </ion-list>
 
@@ -98,7 +112,7 @@
         <ion-list>
           <ion-item *ngFor="let entry of form3">
             <ion-label>{{entry.val}}</ion-label>
-            <ion-toggle slot="end" [(ngModel)]="entry.isChecked"></ion-toggle>
+            <ion-toggle (ionChange)="checkeda(10)" slot="end" [(ngModel)]="entry.isChecked"></ion-toggle>
           </ion-item>
         </ion-list>
     </ion-card-content>
