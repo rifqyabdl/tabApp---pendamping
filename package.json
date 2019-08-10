@@ -25,6 +25,7 @@
     "@ionic-native/core": "^5.0.0",
     "@ionic-native/device": "^5.12.0",
     "@ionic-native/email-composer": "^5.10.0",
+    "@ionic-native/fcm": "^5.12.0",
     "@ionic-native/header-color": "^5.11.0",
     "@ionic-native/in-app-browser": "^5.10.0",
     "@ionic-native/native-page-transitions": "^5.10.0",
@@ -34,6 +35,7 @@
     "@ionic/storage": "^2.2.0",
     "angularfire2": "^5.2.1",
     "cordova-android": "8.0.0",
+    "cordova-plugin-fcm-with-dependecy-updated": "^2.4.0",
     "cordova-plugin-headercolor": "^1.0.0",
     "cordova-plugin-inappbrowser": "^3.1.0",
     "cordova-sqlite-storage": "^3.2.1",
@@ -90,7 +92,8 @@
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-inappbrowser": {},
       "cordova-sqlite-storage": {},
-      "cordova-plugin-headercolor": {}
+      "cordova-plugin-headercolor": {},
+      "cordova-plugin-fcm-with-dependecy-updated": {}
     },
     "platforms": [
       "android"
