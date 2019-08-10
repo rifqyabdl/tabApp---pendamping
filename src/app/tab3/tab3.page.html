@@ -34,18 +34,24 @@
           </ion-item>
         </ion-card>
 
-        <ion-card color="light" padding-bottom>
-          <ion-item button="true" (click)="next('tabs/tab3/aduan')" lines="none">
+        <ion-card color="light">
+          <ion-item button="true" (click)="next('tabs/tab3/tentangapp')">
+            <ion-label class="roboto">
+              <h3><b>Tentang Aplikasi</b></h3>
+            </ion-label>
+            <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+          </ion-item>
+          <ion-item button="true" (click)="next('tabs/tab3/aduan')">
             <ion-label class="roboto">
               <h3><b>Laporkan Aduan</b></h3>
             </ion-label>
-            <ion-icon md="md-mail" slot="start"></ion-icon>
+            <ion-icon name="mail" slot="start"></ion-icon>
           </ion-item>
-          <ion-item button="true" (click)="logoutUser()" lines="none" padding-bottom>
+          <ion-item button="true" (click)="logoutUser()" lines="full" margin-bottom>
             <ion-label class="roboto">
               <h3><b>Logout</b></h3>              
             </ion-label>
-            <ion-icon ios="" md="md-exit" slot="start"></ion-icon>
+            <ion-icon name="exit" slot="start"></ion-icon>
           </ion-item>
         </ion-card>
         </ion-col>
@@ -95,17 +101,4 @@
     </ion-row>
     </div>
   </ion-grid>
-
-
-
 </ion-content>
-
-
-<ion-footer style='background : transparent'>
-	<ion-card (click)="next('tabs/tab3/tentangapp')" style='background : rgba(0,0,0,0.1); height : 10vw;' button='true'>
-	
-			<p class='philosopher'  style='width: 100%; color: black;  text-align : center; font-size : 4vw'>Tentang Aplikasi</p>
-		
-		
-	</ion-card>
-</ion-footer>
