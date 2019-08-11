@@ -10,9 +10,9 @@ import { Storage } from '@ionic/storage';
 })
 
 export class AduanPage implements OnInit {
-
+  isiEmail: string = '';
   isiEmail2: string;
-  subject: string;
+  subject: string = '';
 
   define1 = 1;
   define2 = 0;
@@ -47,8 +47,16 @@ export class AduanPage implements OnInit {
 
 
   send() {
+	  
+	if(this.isiEmail === ''){
+		this.isiEmail = '(Opps Anda belum mencantumkan deskripsi laporan anda, silakan replace tulisan ini dengan deskripsi laporan anda)';
+	}
 
-    this.isiEmail2 = + '<br><br>' + this.namae + this.user + this.ide + this.prodie + this.fakultase + this.warn + this.platformStr + this.model + this.deviceVersion + this.warn2;
+	if(this.subject === ''){
+		this.subject = '(Opps anda belum menulis judul anda)'
+	}
+	
+    this.isiEmail2 = this.isiEmail + '<br><br>'  + this.warn + this.namae + this.user + this.ide + this.prodie + this.fakultase  + this.platformStr + this.model + this.warn2;
 
 
     const email = {
