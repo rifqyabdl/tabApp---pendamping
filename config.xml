@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.panerus.kabim.purwabrata" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.panerus.kabim.purwabarata" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Panerus Kabim</name>
     <description>Aplikasi resmi PKKMB UNS untuk Kakak Pembimbing</description>
     <author email="purwabrata@gmail.com" href="http://pkkmb.uns.ac.id/">Tim Belantosuro</author>
